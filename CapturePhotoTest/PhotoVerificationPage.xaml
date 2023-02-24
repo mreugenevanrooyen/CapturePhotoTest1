@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    Title="Capture Photo"
+    x:Class="CapturePhotoTest.View.PhotoVerificationPage"
+    x:DataType="vm:PhotoVerificationViewModel"
+    xmlns:vm="clr-namespace:CapturePhotoTest.ViewModel"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui">
+
+    <ContentPage.Content>
+        <Grid HorizontalOptions="Fill" VerticalOptions="FillAndExpand">
+            <ScrollView Margin="10,10,10,50">
+                <StackLayout HorizontalOptions="Fill" Margin="0,0,0,10" Orientation="Vertical" Spacing="2" VerticalOptions="Start">
+                    <Image HeightRequest="200" HorizontalOptions="Center" IsVisible="{Binding PhotoSourceVisible}" Margin="0,10,0,0" SemanticProperties.Description="Customer picture" Source="{Binding PhotoSource}" VerticalOptions="Start" />
+                    <Image HeightRequest="200" HorizontalOptions="Center" IsVisible="{Binding PhotoSource2Visible}" Margin="0,10,0,0" SemanticProperties.Description="Customer picture 2" Source="{Binding PhotoSource2}" VerticalOptions="Start" />
+
+                    <VerticalStackLayout Spacing="5">
+                        <Button IsVisible="true"  Command="{Binding CapturePhotoCommand}" Text="Capture Photo" WidthRequest="150" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                    </VerticalStackLayout>
+
+                </StackLayout>
+            </ScrollView>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
